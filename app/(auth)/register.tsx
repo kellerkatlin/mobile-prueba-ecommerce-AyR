@@ -36,7 +36,7 @@ export default function RegisterScreen() {
         defaultValue=""
         render={({ field: { onChange, value } }) => (
           <TextInput
-            className="p-3 mb-4 border rounded"
+            className="p-3 mb-4 border rounded placeholder:text-gray-400"
             placeholder="Nombres"
             onChangeText={onChange}
             value={value}
@@ -50,7 +50,7 @@ export default function RegisterScreen() {
         defaultValue=""
         render={({ field: { onChange, value } }) => (
           <TextInput
-            className="p-3 mb-4 border rounded"
+            className="p-3 mb-4 border rounded placeholder:text-gray-400"
             placeholder="Correo"
             onChangeText={onChange}
             value={value}
@@ -64,7 +64,7 @@ export default function RegisterScreen() {
         defaultValue=""
         render={({ field: { onChange, value } }) => (
           <TextInput
-            className="p-3 mb-4 border rounded"
+            className="p-3 mb-4 border rounded placeholder:text-gray-400"
             placeholder="Contraseña"
             secureTextEntry
             onChangeText={onChange}

@@ -52,6 +52,7 @@ export const useCartStore = create<CartStore>((set, get) => ({
     try {
       await addToCart(productoId, cantidad);
       await get().loadCart();
+      console.log("Producto agregado al carrito");
     } catch {
       set({ error: "Error al agregar producto" });
     }

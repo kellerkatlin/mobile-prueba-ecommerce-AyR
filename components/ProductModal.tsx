@@ -1,4 +1,5 @@
 // components/ProductModal.tsx
+import { useCartStore } from "@/stores/useCartStore";
 import { ProductResponse } from "@/types/product";
 import { forwardRef, useImperativeHandle, useState } from "react";
 import {
@@ -58,7 +59,10 @@ const ProductModal = forwardRef<ProductModalRef>((_, ref) => {
               </Text>
               <TouchableOpacity
                 className="py-3 bg-black rounded-xl"
-                onPress={() => setVisible(false)}
+                onPress={() => {
+                  useCartStore.getState().addProduct(producto.id, 1);
+                  setVisible(false);
+                }}
               >
                 <Text className="text-center text-white">
                   Agregar al carrito

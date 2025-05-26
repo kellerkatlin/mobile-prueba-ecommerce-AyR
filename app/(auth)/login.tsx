@@ -50,7 +50,7 @@ export default function LoginScreen() {
         render={({ field: { onChange, value } }) => (
           <>
             <TextInput
-              className="p-3 mb-1 border rounded"
+              className="p-3 mb-1 border rounded placeholder:text-gray-400"
               placeholder="Correo electrónico"
               keyboardType="email-address"
               autoCapitalize="none"
@@ -79,7 +79,7 @@ export default function LoginScreen() {
         render={({ field: { onChange, value } }) => (
           <>
             <TextInput
-              className="p-3 mb-1 border rounded"
+              className="p-3 mb-1 border rounded placeholder:text-gray-400"
               placeholder="Contraseña"
               secureTextEntry
               onChangeText={onChange}

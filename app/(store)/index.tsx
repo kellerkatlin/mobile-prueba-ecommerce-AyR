@@ -4,6 +4,7 @@ import ProductModal, { ProductModalRef } from "@/components/ProductModal";
 import { useCartStore } from "@/stores/useCartStore";
 import { CategoryResponse } from "@/types/caregory";
 import { ProductResponse } from "@/types/product";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useRouter } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 
@@ -30,6 +31,17 @@ export default function HomeScreen() {
   const [productos, setProductos] = useState<ProductResponse[]>([]);
   const [favoritos, setFavoritos] = useState<ProductResponse[]>([]);
   const modalRef = useRef<ProductModalRef>(null);
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      const token = await AsyncStorage.getItem("token");
+      if (!token) {
+        router.replace("/login"); // Redirige al login si no hay token
+      }
+    };
+
+    checkAuth();
+  }, []);
 
   useEffect(() => {
     const fetchCategorias = async () => {

@@ -45,6 +45,7 @@ export default function CategoriaScreen() {
           (prod) => prod.stock && prod.stock.stockFisico > 0
         );
         setProductos(productosConStock);
+        console.log("Productos con stock:", productosConStock);
       } catch (error) {
         console.error("Error fetching productos:", error);
       }
